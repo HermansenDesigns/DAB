@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201802162113561_ChangeUserDisplayName.Designer.cs">
       <DependentUpon>201802162113561_ChangeUserDisplayName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802162122040_Organization.cs" />
+    <Compile Include="Migrations\201802162122040_Organization.Designer.cs">
+      <DependentUpon>201802162122040_Organization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802162124409_AddOrganization.cs" />
+    <Compile Include="Migrations\201802162124409_AddOrganization.Designer.cs">
+      <DependentUpon>201802162124409_AddOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802162113561_ChangeUserDisplayName.resx">
       <DependentUpon>201802162113561_ChangeUserDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802162122040_Organization.resx">
+      <DependentUpon>201802162122040_Organization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802162124409_AddOrganization.resx">
+      <DependentUpon>201802162124409_AddOrganization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
