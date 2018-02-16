@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201802162124409_AddOrganization.Designer.cs">
       <DependentUpon>201802162124409_AddOrganization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802162128015_ConnectionUserOrganization.cs" />
+    <Compile Include="Migrations\201802162128015_ConnectionUserOrganization.Designer.cs">
+      <DependentUpon>201802162128015_ConnectionUserOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802162124409_AddOrganization.resx">
       <DependentUpon>201802162124409_AddOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802162128015_ConnectionUserOrganization.resx">
+      <DependentUpon>201802162128015_ConnectionUserOrganization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
