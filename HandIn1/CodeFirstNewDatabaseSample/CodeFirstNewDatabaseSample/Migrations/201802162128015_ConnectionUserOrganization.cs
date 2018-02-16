@@ -2,7 +2,7 @@ namespace CodeFirstNewDatabaseSample.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class ConnectionUserOrganization : DbMigration
     {
         public override void Up()
@@ -11,7 +11,7 @@ namespace CodeFirstNewDatabaseSample.Migrations
             CreateIndex("dbo.Users", "Organization_OrganizationId");
             AddForeignKey("dbo.Users", "Organization_OrganizationId", "dbo.Organizations", "OrganizationId");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.Users", "Organization_OrganizationId", "dbo.Organizations");

@@ -16,19 +16,61 @@ namespace CodeFirstNewDatabaseSample
             {
                 Console.WriteLine("Enter a name for a new blog:");
                 var name = Console.ReadLine();
+                Console.WriteLine();
 
                 var blog = new Blog {Name = name};
                 db.Blogs.Add(blog);
                 db.SaveChanges();
 
-                var query = from b in db.Blogs
+                Console.WriteLine("Enter a name for a new Organization:");
+                var nameOrg = Console.ReadLine();
+                Console.WriteLine();
+
+                var organization = new Organization {OrganizationName = nameOrg};
+                db.Organizations.Add(organization);
+                db.SaveChanges();
+
+                Console.WriteLine("Enter a name for a new User:");
+                var nameUser = Console.ReadLine();
+                Console.WriteLine();
+
+                var user = new User { Username = nameUser, Organization = organization};
+                db.Users.Add(user);
+                db.SaveChanges();
+
+                var queryBlogs = from b in db.Blogs
                     orderby b.Name
                     select b;
 
-                foreach (var blogItem in query)
+                var queryUsers = from u in db.Users
+                    orderby u.Username
+                    select u;
+
+                var queryOrganization = from o in db.Organizations
+                    orderby o.OrganizationName
+                    select o;
+
+                Console.WriteLine("Displaying all blogs: ");
+                foreach (var blogItem in queryBlogs)
                 {
                     Console.WriteLine(blogItem.Name);
                 }
+                Console.WriteLine();
+
+                Console.WriteLine("Displaying all users: ");
+                foreach (var userItem in queryUsers)
+                {
+                    Console.WriteLine(userItem.Username);
+                    Console.WriteLine($"-- organization = {userItem.Organization.OrganizationName}");
+                }
+                Console.WriteLine();
+
+                Console.WriteLine("Displaying all organizations: ");
+                foreach (var organizationItem in queryOrganization)
+                {
+                    Console.WriteLine(organizationItem.OrganizationName);
+                }
+                Console.WriteLine();
             }
         }
     }
@@ -61,10 +103,20 @@ namespace CodeFirstNewDatabaseSample
         public virtual Organization Organization { get; set; }
     }
 
+    public class Country
+    {
+        public int CountryId { get; set; }
+        public string CountryName { get; set; }
+        public int CountryCode { get; set; }
+        public List<Organization> OrgsInCountry { get; set; }
+    }
+
     public class Organization
     {
         public int OrganizationId { get; set; }
         public string OrganizationName { get; set; }
+
+        public Country Homeland { get; set; }
     }
 
     public class BlogContext : DbContext
@@ -73,6 +125,7 @@ namespace CodeFirstNewDatabaseSample
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
