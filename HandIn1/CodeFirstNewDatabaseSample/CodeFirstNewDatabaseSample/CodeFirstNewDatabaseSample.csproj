@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201802162128015_ConnectionUserOrganization.Designer.cs">
       <DependentUpon>201802162128015_ConnectionUserOrganization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802162158399_AddCountries.cs" />
+    <Compile Include="Migrations\201802162158399_AddCountries.Designer.cs">
+      <DependentUpon>201802162158399_AddCountries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802162203272_HomelandsRename.cs" />
+    <Compile Include="Migrations\201802162203272_HomelandsRename.Designer.cs">
+      <DependentUpon>201802162203272_HomelandsRename.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802162128015_ConnectionUserOrganization.resx">
       <DependentUpon>201802162128015_ConnectionUserOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802162158399_AddCountries.resx">
+      <DependentUpon>201802162158399_AddCountries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802162203272_HomelandsRename.resx">
+      <DependentUpon>201802162203272_HomelandsRename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

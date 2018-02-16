@@ -116,7 +116,7 @@ namespace CodeFirstNewDatabaseSample
         public int OrganizationId { get; set; }
         public string OrganizationName { get; set; }
 
-        public Country Homeland { get; set; }
+        public List<Country> Homelands { get; set; }
     }
 
     public class BlogContext : DbContext
